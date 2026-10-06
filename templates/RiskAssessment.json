@@ -1,0 +1,99 @@
+{
+  "resourceType": "RiskAssessment",
+  "id": "response-6h-001",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "final",
+  "method": {
+    "coding": [
+      {
+        "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+        "code": "synthetic-example-model",
+        "display": "Synthetic example model (not a real model)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/synthetic-001"
+  },
+  "encounter": {
+    "reference": "Encounter/synthetic-icu-001"
+  },
+  "occurrenceDateTime": "2026-01-01T20:00:00Z",
+  "basis": [
+    {
+      "reference": "Observation/hrv-001-h00"
+    },
+    {
+      "reference": "Observation/map-001"
+    },
+    {
+      "reference": "Observation/lactate-001"
+    },
+    {
+      "reference": "Observation/sofa-001"
+    }
+  ],
+  "prediction": [
+    {
+      "outcome": {
+        "coding": [
+          {
+            "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+            "code": "label-sofa-responder",
+            "display": "SOFA response"
+          }
+        ]
+      },
+      "probabilityDecimal": 0.62,
+      "whenPeriod": {
+        "start": "2026-01-01T20:00:00Z",
+        "end": "2026-01-02T02:00:00Z"
+      }
+    },
+    {
+      "outcome": {
+        "coding": [
+          {
+            "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+            "code": "label-cardio",
+            "display": "Cardiovascular response"
+          }
+        ]
+      },
+      "probabilityDecimal": 0.48,
+      "whenPeriod": {
+        "start": "2026-01-01T20:00:00Z",
+        "end": "2026-01-02T02:00:00Z"
+      }
+    },
+    {
+      "outcome": {
+        "coding": [
+          {
+            "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+            "code": "label-sofa-deterioro",
+            "display": "SOFA deterioration >=2 points"
+          }
+        ]
+      },
+      "probabilityDecimal": 0.07,
+      "whenPeriod": {
+        "start": "2026-01-01T20:00:00Z",
+        "end": "2026-01-02T02:00:00Z"
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Synthetic example. Probabilities are arbitrary values, not model output."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+id: hrv-fhir-mapping
+canonical: https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project
+name: HrvFhirMapping
+title: HRV to FHIR Mapping (synthetic)
+description: FHIR R4 profiles, local terminology and synthetic examples that map heart rate variability, hemodynamic, SOFA and vasopressor variables to LOINC and FHIR resources. Design only; contains no patient data.
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: ci-build
+license: MIT
+publisher:
+  name: Alejandro (josealejo990930dc-ui)
+  url: https://github.com/josealejo990930dc-ui/HRV-FHIR-mapping-project
+FSHOnly: false
+dependencies:
+  hl7.terminology.r4: 6.2.0
+pages:
+  index.md:
+    title: Home
+menu:
+  Home: index.html
+  Artifacts: artifacts.html

@@ -1,0 +1,23 @@
+{
+  "resourceType": "Device",
+  "id": "ecg-monitor-001",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "active",
+  "deviceName": [
+    {
+      "name": "Bedside patient monitor (synthetic)",
+      "type": "user-friendly-name"
+    }
+  ],
+  "type": {
+    "text": "Bedside monitor, ECG lead II"
+  }
+}

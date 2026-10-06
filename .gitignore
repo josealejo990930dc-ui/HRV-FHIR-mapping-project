@@ -1,0 +1,12 @@
+# Private working files (Spanish notes, source-specific details). Never commit.
+private/
+*.xlsx
+out/
+__pycache__/
+.pytest_cache/
+fsh-generated/
+input-cache/
+temp/
+template/
+output/
+publisher.jar

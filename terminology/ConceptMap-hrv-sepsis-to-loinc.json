@@ -1,0 +1,226 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "hrv-sepsis-to-loinc",
+  "url": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/ConceptMap/hrv-sepsis-to-loinc",
+  "version": "0.2.0",
+  "name": "HrvSepsisToLoinc",
+  "status": "draft",
+  "experimental": true,
+  "description": "Mapa de conceptos del estudio a LOINC 2.83 y SNOMED CT. Fichas verificadas por el autor el 2026-10-05.",
+  "sourceUri": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+  "targetUri": "http://loinc.org",
+  "group": [
+    {
+      "source": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+      "target": "http://loinc.org",
+      "element": [
+        {
+          "code": "hrv_sdnn",
+          "display": "SDNN",
+          "target": [
+            {
+              "code": "112429-6",
+              "display": "Heart rate variability SDNN [Time]",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "map_t0",
+          "display": "Presión arterial media en T0",
+          "target": [
+            {
+              "code": "8478-0",
+              "display": "Mean blood pressure",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mbp_mean_actual12h",
+          "display": "PAM media de la ventana actual",
+          "target": [
+            {
+              "code": "8478-0",
+              "display": "Mean blood pressure",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "mbp_mean_next6h",
+          "display": "PAM media de la ventana siguiente",
+          "target": [
+            {
+              "code": "8478-0",
+              "display": "Mean blood pressure",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "rr_t0",
+          "display": "Frecuencia respiratoria en T0",
+          "target": [
+            {
+              "code": "9279-1",
+              "display": "Respiratory rate",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "spo2_t0",
+          "display": "Saturación de oxígeno en T0",
+          "target": [
+            {
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "lactate_last_actual12h",
+          "display": "Lactato, último valor de la ventana actual",
+          "target": [
+            {
+              "code": "32693-4",
+              "display": "Lactate [Moles/volume] in Blood",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "lactate_last_next6h",
+          "display": "Lactato, último valor de la ventana siguiente",
+          "target": [
+            {
+              "code": "32693-4",
+              "display": "Lactate [Moles/volume] in Blood",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_total_t0",
+          "display": "SOFA total en T0",
+          "target": [
+            {
+              "code": "96790-1",
+              "display": "SOFA Total Score",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_resp_t0",
+          "display": "Componente respiratorio",
+          "target": [
+            {
+              "code": "96823-0",
+              "display": "Respiration [Score] SOFA",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_coag_t0",
+          "display": "Componente de coagulación",
+          "target": [
+            {
+              "code": "96824-8",
+              "display": "Coagulation [Score] SOFA",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_liver_t0",
+          "display": "Componente hepático",
+          "target": [
+            {
+              "code": "96825-5",
+              "display": "Liver [Score] SOFA",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_cardio_t0",
+          "display": "Componente cardiovascular",
+          "target": [
+            {
+              "code": "96826-3",
+              "display": "Cardiovascular [Score] SOFA",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_neuro_t0",
+          "display": "Componente neurológico",
+          "target": [
+            {
+              "code": "96827-1",
+              "display": "Central nervous system [Score] SOFA",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_renal_t0",
+          "display": "Componente renal",
+          "target": [
+            {
+              "code": "96828-9",
+              "display": "Renal [Score] SOFA",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "sofa_total_t0_6h",
+          "display": "SOFA total en T0+6h",
+          "target": [
+            {
+              "code": "96790-1",
+              "display": "SOFA Total Score",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "age",
+          "display": "Edad",
+          "target": [
+            {
+              "code": "30525-0",
+              "display": "Age",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ],
+      "targetVersion": "2.83"
+    },
+    {
+      "source": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+      "target": "http://snomed.info/sct",
+      "element": [
+        {
+          "code": "sepsis",
+          "display": "Sepsis (Sepsis-3)",
+          "target": [
+            {
+              "code": "91302008",
+              "display": "Sepsis (disorder)",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ],
+      "targetVersion": "http://snomed.info/sct/900000000000207008/version/20261001"
+    }
+  ]
+}

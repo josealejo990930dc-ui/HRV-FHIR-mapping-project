@@ -1,0 +1,151 @@
+{
+  "resourceType": "Observation",
+  "id": "sofa-001",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "96790-1",
+        "display": "SOFA Total Score"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/synthetic-001"
+  },
+  "encounter": {
+    "reference": "Encounter/synthetic-icu-001"
+  },
+  "effectiveDateTime": "2026-01-01T20:00:00Z",
+  "valueQuantity": {
+    "value": 6,
+    "unit": "score",
+    "system": "http://unitsofmeasure.org",
+    "code": "{score}"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "96823-0",
+            "display": "Respiration [Score] SOFA"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 2,
+        "unit": "score",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "96824-8",
+            "display": "Coagulation [Score] SOFA"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1,
+        "unit": "score",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "96825-5",
+            "display": "Liver [Score] SOFA"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 0,
+        "unit": "score",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "96826-3",
+            "display": "Cardiovascular [Score] SOFA"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1,
+        "unit": "score",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "96827-1",
+            "display": "Central nervous system [Score] SOFA"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1,
+        "unit": "score",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "96828-9",
+            "display": "Renal [Score] SOFA"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1,
+        "unit": "score",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    }
+  ]
+}

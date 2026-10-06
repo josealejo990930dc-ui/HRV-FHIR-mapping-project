@@ -1,0 +1,51 @@
+name: implementation-guide
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  sushi:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: {python-version: "3.11"}
+      - uses: actions/setup-node@v5
+        with: {node-version: "22"}
+      - name: terminology/ and input/resources/ must be in sync
+        run: python tools/sync_ig.py && git diff --exit-code
+      - run: npm install -g fsh-sushi
+      - run: sushi build .
+  publish:
+    needs: sushi
+    if: github.ref == 'refs/heads/main'
+    continue-on-error: true   # first runs of the IG Publisher are untested; remove once green
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: {python-version: "3.11"}
+      - uses: actions/setup-node@v5
+        with: {node-version: "22"}
+      - uses: actions/setup-java@v5
+        with: {distribution: temurin, java-version: "17"}
+      - uses: ruby/setup-ruby@v1
+        with: {ruby-version: "3.3"}
+      - run: gem install jekyll
+      - run: python tools/sync_ig.py
+      - run: npm install -g fsh-sushi
+      - run: sushi build .
+      - run: curl -L -o publisher.jar https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
+      - run: java -jar publisher.jar -ig . -no-sushi
+      - uses: actions/upload-pages-artifact@v4
+        with: {path: output}
+      - id: deploy
+        uses: actions/deploy-pages@v4

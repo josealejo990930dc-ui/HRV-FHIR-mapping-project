@@ -1,0 +1,61 @@
+{
+  "resourceType": "Condition",
+  "id": "sepsis-001",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "91302008",
+        "display": "Sepsis (disorder)"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A41.9",
+        "display": "Septicaemia, unspecified"
+      }
+    ],
+    "text": "Sepsis"
+  },
+  "subject": {
+    "reference": "Patient/synthetic-001"
+  },
+  "encounter": {
+    "reference": "Encounter/synthetic-icu-001"
+  },
+  "onsetDateTime": "2026-01-01T08:00:00Z"
+}

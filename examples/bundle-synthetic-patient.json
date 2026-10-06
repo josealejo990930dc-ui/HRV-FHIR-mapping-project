@@ -1,0 +1,1478 @@
+{
+  "resourceType": "Bundle",
+  "id": "synthetic-bundle-001",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Patient/synthetic-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "synthetic-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "gender": "female",
+        "birthDate": "1958-03-14"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/synthetic-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Encounter/synthetic-icu-001",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "synthetic-icu-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "in-progress",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "type": [
+          {
+            "text": "Intensive care unit stay"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "period": {
+          "start": "2026-01-01T08:00:00Z"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/synthetic-icu-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Device/ecg-monitor-001",
+      "resource": {
+        "resourceType": "Device",
+        "id": "ecg-monitor-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "active",
+        "deviceName": [
+          {
+            "name": "Bedside patient monitor (synthetic)",
+            "type": "user-friendly-name"
+          }
+        ],
+        "type": {
+          "text": "Bedside monitor, ECG lead II"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Device/ecg-monitor-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Condition/sepsis-001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "sepsis-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91302008",
+              "display": "Sepsis (disorder)"
+            },
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "A41.9",
+              "display": "Septicaemia, unspecified"
+            }
+          ],
+          "text": "Sepsis"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "onsetDateTime": "2026-01-01T08:00:00Z"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/sepsis-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/hrv-001-h00",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hrv-001-h00",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "hrv-panel",
+              "display": "Hourly heart rate variability panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectivePeriod": {
+          "start": "2026-01-01T08:00:00Z",
+          "end": "2026-01-01T09:00:00Z"
+        },
+        "device": {
+          "reference": "Device/ecg-monitor-001"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "median-of-valid-5min-epochs",
+              "display": "Hourly median of valid 5-minute epochs"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "112429-6",
+                  "display": "Heart rate variability SDNN [Time]"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 32.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-rmssd",
+                  "display": "RMSSD"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 24.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sd1",
+                  "display": "SD1 (Poincare)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 17.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sd2",
+                  "display": "SD2 (Poincare)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 42.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-lf-norm",
+                  "display": "LF, normalized per epoch"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.35,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-hf-norm",
+                  "display": "HF, normalized per epoch"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.18,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-lfhf",
+                  "display": "LF/HF ratio"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.94,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sampen",
+                  "display": "Sample entropy (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.4,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-apen",
+                  "display": "Approximate entropy (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.1,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-dfa-a1",
+                  "display": "DFA alpha1 (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/hrv-001-h00"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/hrv-001-h01",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hrv-001-h01",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "hrv-panel",
+              "display": "Hourly heart rate variability panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectivePeriod": {
+          "start": "2026-01-01T09:00:00Z",
+          "end": "2026-01-01T10:00:00Z"
+        },
+        "device": {
+          "reference": "Device/ecg-monitor-001"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "median-of-valid-5min-epochs",
+              "display": "Hourly median of valid 5-minute epochs"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "112429-6",
+                  "display": "Heart rate variability SDNN [Time]"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 34.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-rmssd",
+                  "display": "RMSSD"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 25.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sd1",
+                  "display": "SD1 (Poincare)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 17.7,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sd2",
+                  "display": "SD2 (Poincare)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 44.7,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-lf-norm",
+                  "display": "LF, normalized per epoch"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.35,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-hf-norm",
+                  "display": "HF, normalized per epoch"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.17,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-lfhf",
+                  "display": "LF/HF ratio"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 2.06,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sampen",
+                  "display": "Sample entropy (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.4,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-apen",
+                  "display": "Approximate entropy (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.1,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-dfa-a1",
+                  "display": "DFA alpha1 (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/hrv-001-h01"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/hrv-001-h02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hrv-001-h02",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "hrv-panel",
+              "display": "Hourly heart rate variability panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectivePeriod": {
+          "start": "2026-01-01T10:00:00Z",
+          "end": "2026-01-01T11:00:00Z"
+        },
+        "device": {
+          "reference": "Device/ecg-monitor-001"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "median-of-valid-5min-epochs",
+              "display": "Hourly median of valid 5-minute epochs"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "112429-6",
+                  "display": "Heart rate variability SDNN [Time]"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 36.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-rmssd",
+                  "display": "RMSSD"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 26.0,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sd1",
+                  "display": "SD1 (Poincare)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 18.4,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sd2",
+                  "display": "SD2 (Poincare)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 47.5,
+              "unit": "ms",
+              "system": "http://unitsofmeasure.org",
+              "code": "ms"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-lf-norm",
+                  "display": "LF, normalized per epoch"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.35,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-hf-norm",
+                  "display": "HF, normalized per epoch"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.16,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-lfhf",
+                  "display": "LF/HF ratio"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 2.19,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-sampen",
+                  "display": "Sample entropy (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.4,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-apen",
+                  "display": "Approximate entropy (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.1,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "hrv-dfa-a1",
+                  "display": "DFA alpha1 (RR)"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1.05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/hrv-001-h02"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/map-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "map-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8478-0",
+              "display": "Mean blood pressure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T20:00:00Z",
+        "valueQuantity": {
+          "value": 78,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/map-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/rr-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "rr-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T20:00:00Z",
+        "valueQuantity": {
+          "value": 20,
+          "unit": "breaths/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/rr-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/spo2-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "spo2-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "2708-6",
+              "display": "Oxygen saturation in Arterial blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T20:00:00Z",
+        "valueQuantity": {
+          "value": 94,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/spo2-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/lactate-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "lactate-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32693-4",
+              "display": "Lactate [Moles/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T20:00:00Z",
+        "valueQuantity": {
+          "value": 2.8,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/lactate-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/sofa-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "sofa-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "96790-1",
+              "display": "SOFA Total Score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T20:00:00Z",
+        "valueQuantity": {
+          "value": 6,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "96823-0",
+                  "display": "Respiration [Score] SOFA"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 2,
+              "unit": "score",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "96824-8",
+                  "display": "Coagulation [Score] SOFA"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1,
+              "unit": "score",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "96825-5",
+                  "display": "Liver [Score] SOFA"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0,
+              "unit": "score",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "96826-3",
+                  "display": "Cardiovascular [Score] SOFA"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1,
+              "unit": "score",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "96827-1",
+                  "display": "Central nervous system [Score] SOFA"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1,
+              "unit": "score",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "96828-9",
+                  "display": "Renal [Score] SOFA"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 1,
+              "unit": "score",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/sofa-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/MedicationAdministration/norepi-001",
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "norepi-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "in-progress",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45555007",
+              "display": "Norepinephrine"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7512",
+              "display": "norepinephrine"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2475337",
+              "display": "250 ML norepinephrine 0.016 MG/ML Injection"
+            }
+          ],
+          "text": "Norepinephrine infusion"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "context": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T12:00:00Z",
+        "dosage": {
+          "rateQuantity": {
+            "value": 0.08,
+            "unit": "ug/kg/min",
+            "system": "http://unitsofmeasure.org",
+            "code": "ug/kg/min"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/norepi-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/Observation/ned-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ned-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "therapy",
+                "display": "Therapy"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "ned",
+              "display": "Norepinephrine equivalent dose"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "effectiveDateTime": "2026-01-01T20:00:00Z",
+        "valueQuantity": {
+          "value": 0.08,
+          "unit": "ug/kg/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/kg/min"
+        },
+        "focus": [
+          {
+            "reference": "MedicationAdministration/norepi-001"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/ned-001"
+      }
+    },
+    {
+      "fullUrl": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/RiskAssessment/response-6h-001",
+      "resource": {
+        "resourceType": "RiskAssessment",
+        "id": "response-6h-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "status": "final",
+        "method": {
+          "coding": [
+            {
+              "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+              "code": "synthetic-example-model",
+              "display": "Synthetic example model (not a real model)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/synthetic-001"
+        },
+        "encounter": {
+          "reference": "Encounter/synthetic-icu-001"
+        },
+        "occurrenceDateTime": "2026-01-01T20:00:00Z",
+        "basis": [
+          {
+            "reference": "Observation/hrv-001-h00"
+          },
+          {
+            "reference": "Observation/map-001"
+          },
+          {
+            "reference": "Observation/lactate-001"
+          },
+          {
+            "reference": "Observation/sofa-001"
+          }
+        ],
+        "prediction": [
+          {
+            "outcome": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "label-sofa-responder",
+                  "display": "SOFA response"
+                }
+              ]
+            },
+            "probabilityDecimal": 0.62,
+            "whenPeriod": {
+              "start": "2026-01-01T20:00:00Z",
+              "end": "2026-01-02T02:00:00Z"
+            }
+          },
+          {
+            "outcome": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "label-cardio",
+                  "display": "Cardiovascular response"
+                }
+              ]
+            },
+            "probabilityDecimal": 0.48,
+            "whenPeriod": {
+              "start": "2026-01-01T20:00:00Z",
+              "end": "2026-01-02T02:00:00Z"
+            }
+          },
+          {
+            "outcome": {
+              "coding": [
+                {
+                  "system": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+                  "code": "label-sofa-deterioro",
+                  "display": "SOFA deterioration >=2 points"
+                }
+              ]
+            },
+            "probabilityDecimal": 0.07,
+            "whenPeriod": {
+              "start": "2026-01-01T20:00:00Z",
+              "end": "2026-01-02T02:00:00Z"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Synthetic example. Probabilities are arbitrary values, not model output."
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "RiskAssessment/response-6h-001"
+      }
+    }
+  ]
+}

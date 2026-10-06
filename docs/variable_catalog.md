@@ -1,0 +1,50 @@
+# Variable catalog
+
+Concepts mapped in this project, with their code and the level of equivalence. LOINC 2.83, SNOMED CT International 2026-10-01.
+
+| Group | Concept | UCUM unit | FHIR element | Code system | Code | Equivalence |
+|---|---|---|---|---|---|---|
+| HRV time domain | SDNN | ms | Observation.component | LOINC | 112429-6 | exact |
+| HRV time domain | RMSSD | ms | Observation.component | LOCAL | hrv-rmssd | no LOINC code (local code) |
+| HRV time domain | SD1 (Poincare) | ms | Observation.component | LOCAL | hrv-sd1 | no LOINC code (local code) |
+| HRV time domain | SD2 (Poincare) | ms | Observation.component | LOCAL | hrv-sd2 | no LOINC code (local code) |
+| HRV frequency domain | LF, normalized per epoch | 1 | Observation.component | LOCAL | hrv-lf-norm | no LOINC code (local code) |
+| HRV frequency domain | HF, normalized per epoch | 1 | Observation.component | LOCAL | hrv-hf-norm | no LOINC code (local code) |
+| HRV frequency domain | LF/HF ratio | 1 | Observation.component | LOCAL | hrv-lfhf | no LOINC code (local code) |
+| HRV nonlinear | Sample entropy (RR) | 1 | Observation.component | LOCAL | hrv-sampen | no LOINC code (local code) |
+| HRV nonlinear | Approximate entropy (RR) | 1 | Observation.component | LOCAL | hrv-apen | no LOINC code (local code) |
+| HRV nonlinear | DFA alpha1 (RR) | 1 | Observation.component | LOCAL | hrv-dfa-a1 | no LOINC code (local code) |
+| HRV quality | Hours with valid HRV | h | Observation (derived) | LOCAL | hrv-valid-hours | local code |
+| HRV quality | Hours since last valid HRV | h | Observation (derived) | LOCAL | hrv-hours-since-last | local code |
+| Context | Source ECG signal | n/a | Device | FHIR | Device | native FHIR element |
+| Vital signs | Mean blood pressure | mm[Hg] | Observation (vital-signs) | LOINC | 8478-0 | exact (generic code) |
+| Vital signs | Proportion of MAP >65 mmHg | % | Observation (derived) | LOCAL | mbp-pct-gt65 | local code |
+| Vital signs | Relative MAP increase | % | Observation (derived) | LOCAL | mbp-relative-increase | local code |
+| Vital signs | Respiratory rate | /min | Observation (vital-signs) | LOINC | 9279-1 | exact |
+| Vital signs | Oxygen saturation by pulse oximetry | % | Observation (vital-signs) | LOINC | 59408-5 | exact |
+| Laboratory | Lactate in blood | mmol/L | Observation (laboratory) | LOINC | 32693-4 | exact (generic code) |
+| Medication | Norepinephrine equivalent dose | ug/kg/min | Observation (therapy), focus to MedicationAdministration | LOCAL | ned | local code |
+| Medication | Vasoactive-Inotropic Score | {score} | Observation (therapy), focus to MedicationAdministration | LOCAL | vis | local code |
+| Medication | Cumulative vasopressor load | ug/kg/min.h | Observation (therapy), focus to MedicationAdministration | LOCAL | cumvp | local code |
+| Medication | Sedative infusion | n/a | MedicationAdministration | LOCAL | sedative-infusion | local code |
+| Medication | Opioid infusion | n/a | MedicationAdministration | LOCAL | opioid-infusion | local code |
+| SOFA | SOFA total score | {score} | Observation (survey) | LOINC | 96790-1 | exact |
+| SOFA | SOFA respiration | {score} | Observation.component | LOINC | 96823-0 | exact |
+| SOFA | SOFA coagulation | {score} | Observation.component | LOINC | 96824-8 | exact |
+| SOFA | SOFA liver | {score} | Observation.component | LOINC | 96825-5 | exact |
+| SOFA | SOFA cardiovascular | {score} | Observation.component | LOINC | 96826-3 | exact |
+| SOFA | SOFA central nervous system | {score} | Observation.component | LOINC | 96827-1 | exact |
+| SOFA | SOFA renal | {score} | Observation.component | LOINC | 96828-9 | exact |
+| SOFA | Valid SOFA components | 1 | Observation (derived) | LOCAL | sofa-valid-components | local code |
+| SOFA | Paired SOFA change | {score} | Observation (derived) | LOCAL | sofa-delta-paired | local code |
+| SOFA | SOFA at sepsis onset | {score} | Observation (survey) | LOCAL | sofa-sepsis-onset | local code |
+| Demographics | Age | a | Patient.birthDate (derived) | LOINC | 30525-0 | exact |
+| Demographics | Sex | n/a | Patient.gender | FHIR ValueSet | administrative-gender | FHIR value set |
+| Context | ICU stay | n/a | Encounter | FHIR | Encounter | native FHIR element |
+| Context | Sepsis | n/a | Condition | SNOMED CT | 91302008 | exact |
+| Context | Date and time of death | n/a | Patient.deceasedDateTime | FHIR | Patient.deceasedDateTime | native FHIR element |
+| Context | Prediction time | n/a | RiskAssessment.occurrenceDateTime | FHIR | RiskAssessment.occurrenceDateTime | native FHIR element |
+| Prediction labels | SOFA response | n/a | RiskAssessment.prediction.outcome | LOCAL | label-sofa-responder | local code |
+| Prediction labels | Cardiovascular response | n/a | RiskAssessment.prediction.outcome | LOCAL | label-cardio | local code |
+| Prediction labels | SOFA deterioration >=2 points | n/a | RiskAssessment.prediction.outcome | LOCAL | label-sofa-deterioro | local code |
+| Model output | Predicted probability | 1 | RiskAssessment.prediction.probabilityDecimal | LOCAL | model-probability | local code |

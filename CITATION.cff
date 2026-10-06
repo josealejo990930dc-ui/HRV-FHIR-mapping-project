@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "HRV to FHIR mapping (synthetic)"
+type: software
+authors:
+  - alias: "josealejo990930dc-ui"
+repository-code: "https://github.com/josealejo990930dc-ui/HRV-FHIR-mapping-project"
+url: "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/"
+license: MIT
+version: 0.1.0
+date-released: 2026-10-06
+keywords: [FHIR, LOINC, HRV, sepsis, interoperability, FHIR Shorthand]

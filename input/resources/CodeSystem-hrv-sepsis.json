@@ -1,0 +1,294 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "hrv-sepsis",
+  "url": "https://josealejo990930dc-ui.github.io/HRV-FHIR-mapping-project/CodeSystem/hrv-sepsis",
+  "version": "0.1.0",
+  "name": "HrvSepsisLocalCodes",
+  "title": "Local codes of the HRV sepsis project",
+  "status": "draft",
+  "experimental": true,
+  "content": "complete",
+  "description": "Local concepts for the HRV sepsis FHIR mapping project: concepts without a LOINC code, derived scores, labels and synthetic-example placeholders.",
+  "caseSensitive": true,
+  "count": 28,
+  "concept": [
+    {
+      "code": "hrv-rmssd",
+      "display": "RMSSD",
+      "definition": "Root mean square of successive RR differences."
+    },
+    {
+      "code": "hrv-sd1",
+      "display": "SD1 (Poincare)",
+      "definition": "Short-term variability: Poincare plot width, equal to RMSSD/sqrt(2).",
+      "designation": [
+        {
+          "language": "es",
+          "value": "SD1 (Poincaré)"
+        }
+      ]
+    },
+    {
+      "code": "hrv-sd2",
+      "display": "SD2 (Poincare)",
+      "definition": "Long-term variability: Poincare plot length.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "SD2 (Poincaré)"
+        }
+      ]
+    },
+    {
+      "code": "hrv-lf-norm",
+      "display": "LF, normalized per epoch",
+      "definition": "Low-frequency spectral power, normalized per 5-minute epoch. Unitless; not comparable across epochs.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "LF normalizada por época"
+        }
+      ]
+    },
+    {
+      "code": "hrv-hf-norm",
+      "display": "HF, normalized per epoch",
+      "definition": "High-frequency spectral power, normalized per 5-minute epoch. Unitless; not comparable across epochs.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "HF normalizada por época"
+        }
+      ]
+    },
+    {
+      "code": "hrv-lfhf",
+      "display": "LF/HF ratio",
+      "definition": "Ratio of LF to HF power. The only spectral value that keeps its meaning across epochs.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Razón LF/HF"
+        }
+      ]
+    },
+    {
+      "code": "hrv-sampen",
+      "display": "Sample entropy (RR)",
+      "definition": "Sample entropy of the RR series.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Entropía muestral (RR)"
+        }
+      ]
+    },
+    {
+      "code": "hrv-apen",
+      "display": "Approximate entropy (RR)",
+      "definition": "Approximate entropy of the RR series.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Entropía aproximada (RR)"
+        }
+      ]
+    },
+    {
+      "code": "hrv-dfa-a1",
+      "display": "DFA alpha1 (RR)",
+      "definition": "Short-term detrended fluctuation analysis exponent of the RR series.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "DFA α1 (RR)"
+        }
+      ]
+    },
+    {
+      "code": "hrv-valid-hours",
+      "display": "Hours with valid HRV",
+      "definition": "Number of hours with valid HRV in the observation window.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Horas con HRV válida"
+        }
+      ]
+    },
+    {
+      "code": "hrv-hours-since-last",
+      "display": "Hours since last valid HRV",
+      "definition": "Hours elapsed since the last valid HRV value.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Horas desde la última HRV válida"
+        }
+      ]
+    },
+    {
+      "code": "mbp-pct-gt65",
+      "display": "Proportion of MAP >65 mmHg",
+      "definition": "Proportion of mean arterial pressure values above 65 mmHg in the following window.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Proporción de PAM >65 mmHg"
+        }
+      ]
+    },
+    {
+      "code": "mbp-relative-increase",
+      "display": "Relative MAP increase",
+      "definition": "Relative increase of mean arterial pressure.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Incremento relativo de PAM"
+        }
+      ]
+    },
+    {
+      "code": "ned",
+      "display": "Norepinephrine equivalent dose",
+      "definition": "Vasopressor dose expressed as norepinephrine equivalents (ug/kg/min).",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Dosis equivalente de norepinefrina"
+        }
+      ]
+    },
+    {
+      "code": "vis",
+      "display": "Vasoactive-Inotropic Score",
+      "definition": "Vasoactive-Inotropic Score."
+    },
+    {
+      "code": "cumvp",
+      "display": "Cumulative vasopressor load",
+      "definition": "Cumulative vasopressor load over the window.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Carga acumulada de vasopresores"
+        }
+      ]
+    },
+    {
+      "code": "sedative-infusion",
+      "display": "Sedative infusion",
+      "definition": "Sedative infusion running.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Infusión de sedante"
+        }
+      ]
+    },
+    {
+      "code": "opioid-infusion",
+      "display": "Opioid infusion",
+      "definition": "Opioid infusion running.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Infusión de opioide"
+        }
+      ]
+    },
+    {
+      "code": "sofa-valid-components",
+      "display": "Valid SOFA components",
+      "definition": "Number of valid SOFA components at T0.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Componentes SOFA válidos"
+        }
+      ]
+    },
+    {
+      "code": "sofa-delta-paired",
+      "display": "Paired SOFA change",
+      "definition": "Change in SOFA between paired time points.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Δ SOFA pareado"
+        }
+      ]
+    },
+    {
+      "code": "sofa-sepsis-onset",
+      "display": "SOFA at sepsis onset",
+      "definition": "SOFA score at sepsis onset.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "SOFA al inicio de la sepsis"
+        }
+      ]
+    },
+    {
+      "code": "label-sofa-responder",
+      "display": "SOFA response",
+      "definition": "Prediction label: SOFA response within the horizon.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Respuesta SOFA"
+        }
+      ]
+    },
+    {
+      "code": "label-cardio",
+      "display": "Cardiovascular response",
+      "definition": "Prediction label: cardiovascular response within the horizon.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Respuesta cardiovascular"
+        }
+      ]
+    },
+    {
+      "code": "label-sofa-deterioro",
+      "display": "SOFA deterioration >=2 points",
+      "definition": "Prediction label: SOFA increase of 2 or more points within the horizon.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Deterioro SOFA ≥2"
+        }
+      ]
+    },
+    {
+      "code": "model-probability",
+      "display": "Predicted probability",
+      "definition": "Probability predicted by a model.",
+      "designation": [
+        {
+          "language": "es",
+          "value": "Probabilidad predicha"
+        }
+      ]
+    },
+    {
+      "code": "hrv-panel",
+      "display": "Hourly heart rate variability panel",
+      "definition": "Panel of HRV metrics computed per hour from ECG."
+    },
+    {
+      "code": "median-of-valid-5min-epochs",
+      "display": "Hourly median of valid 5-minute epochs",
+      "definition": "Aggregation method: hourly value is the median of the valid 5-minute epochs."
+    },
+    {
+      "code": "synthetic-example-model",
+      "display": "Synthetic example model (not a real model)",
+      "definition": "Placeholder for the model in synthetic examples; not a real model."
+    }
+  ]
+}
